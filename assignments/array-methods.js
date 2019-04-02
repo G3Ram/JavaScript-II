@@ -501,7 +501,63 @@ console.log(ticketPriceTotal);
 // problems using one or many of the array methods listed above.
 
 // Problem 1
+// How many shirts of each size should be ordered?
+function shirtCount() {
+  let shirtCounter = [];
+
+  function countShirts(shirtSize) {
+    let numberOfShirts = runners.filter(runner => {
+      return runner.shirt_size === shirtSize;
+    });
+    shirtCounter.push({
+      shirt_size: shirtSize,
+      number_of_shirts: numberOfShirts.length
+    });
+  }
+  countShirts("XS");
+  countShirts("S");
+  countShirts("M");
+  countShirts("L");
+  countShirts("XL");
+  countShirts("2XL");
+  return shirtCounter;
+}
+console.log("---------------------CHALLENGE 5 -------------------");
+console.log(shirtCount());
 
 // Problem 2
+// List the company and the number of runners.
+function companyWiseRunners() {
+  // Get the list of unique companies
+  let companies = [];
+  runners.forEach(runner => {
+    if (!companies.includes(runner.company_name)) {
+      companies.push(runner.company_name);
+    }
+  });
+  // count the number of runners per company
+  function countRunners(companyName) {
+    let numberOfRunners = runners.filter(runner => {
+      return runner.company_name === companyName;
+    });
+
+    return numberOfRunners.length;
+  }
+
+  // Prepare a list of company + number of runners
+  let companyRunners = [];
+
+  companies.forEach(company => {
+    companyRunners.push({
+      company_name: company,
+      number_of_runners: countRunners(company)
+    });
+  });
+  return companyRunners;
+}
+
+const companyRunners = companyWiseRunners();
+console.log(companyRunners);
 
 // Problem 3
+// For the new letter get an array with first name, last name and email address.
