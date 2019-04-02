@@ -34,11 +34,11 @@ function getLength(arr, cb) {
 }
 
 // CALLBACK FUNCTION TO PRINT ARRAY LENGTH
-function printArrLength(arr) {
+function printArrLength(arrLength) {
   console.log(
     "\n---------------------CHALLENGE 1 - ARRAY LENGTH ----------------------"
   );
-  console.log("\nLength of the array is " + arr);
+  console.log("\nLength of the array is " + arrLength);
 }
 
 // INVOCATION
