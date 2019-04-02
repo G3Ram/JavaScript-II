@@ -560,4 +560,13 @@ const companyRunners = companyWiseRunners();
 console.log(companyRunners);
 
 // Problem 3
-// For the new letter get an array with first name, last name and email address.
+// For the news letter get an array with first name, last name and email address.
+let newsLetterDetails = [];
+runners.forEach(runner => {
+  newsLetterDetails.push({
+    first_name: runner.first_name,
+    last_name: runner.last_name,
+    email: runner.email
+  });
+});
+console.log(newsLetterDetails);
